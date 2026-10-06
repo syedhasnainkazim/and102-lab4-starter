@@ -43,6 +43,7 @@ class DetailActivity : AppCompatActivity() {
             .into(campgroundImageIV)
     }
 
+
     // Back arrow tapped: close this screen and return to the list
     override fun onSupportNavigateUp(): Boolean {
         finish()

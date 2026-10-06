@@ -19,6 +19,9 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
+        // Show a back arrow in the top-left of the app bar
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         // Find the remaining Views for the screen
         campgroundNameTV = findViewById(R.id.campgroundName)
         campgroundDescriptionTV = findViewById(R.id.campgroundDescription)
@@ -38,5 +41,11 @@ class DetailActivity : AppCompatActivity() {
         Glide.with(this)
             .load(campground.imageUrl)
             .into(campgroundImageIV)
+    }
+
+    // Back arrow tapped: close this screen and return to the list
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 }
